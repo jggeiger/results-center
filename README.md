@@ -1,87 +1,112 @@
-# Results Center
+# “Results Center Project”
+> _ElectionBuddy Coding Challenge_
 
-A Rails application for displaying election results in real-time. This project is part of the ElectionBuddy coding challenge focused on building a modern Results Center dashboard.
+## Purpose
 
----
-## READ ME!
-
-Use this README to document your ideas, progress, and any other relevant information about your implementation.
-
-Please replace the current content of this README with details specific to your project. Clearly explain your design decisions, implementation approach, and any unique features or challenges you encountered. This will help reviewers understand your thought process and evaluate your work effectively.
+We want to see **how you think, code, and communicate** by asking you to implement a focused feature slice of our domain. You’ll build a small Rails service that publishes election results in a *Results Center* style page/API. The exercise is **time‑boxed to \~4 hours**. Finish the *Core* section first; the *Extra Layers* are purely optional if you have remaining time.
 
 ---
 
-## Challenge Guidelines
+## Scenario
 
-Visit the [ElectionBuddy challenge page](https://github.com/electionbuddy/results-center-guidelines) for detailed requirements and guidelines.
+> *“ElectionBuddy is rolling out a lightweight `Mini Results Center` for organizations that run just a handful of simultaneous votes.
+> Your task is to add this capability to a stripped‑down Rails code base that already contains `Election`, `Question`, `Answer`, `Voter`, and `Ballot` models with seed data.”*
 
-If you are a candidate specializing in a foreign programming language, this project serves as an excellent foundation for implementing the Results Center in your language of choice. Alternatively, you can use it as an opportunity to explore and learn Ruby on Rails.
+You will implement a single public endpoint and (optionally) a minimal HTML view. The endpoint should work for a small election but be designed so it can evolve for more complex ballot types, live updates, and auditing.
 
-## Getting Started
+---
 
-### Prerequisites
+## Reference Materials
 
-- Ruby 3.4+
-- Rails 8+
-- PostgreSQL
-- Docker (optional but recommended)
+Check the [Nexus](https://github.com/electionbuddy/results-center/wiki/Nexus) for some extra context and useful information!
 
-### Quick Start with Docker
+---
 
-This project uses [drun.sh](https://github.com/Rynaro/drun) - a simple Docker runner for Rails development.
+## Using AI Assistance
 
-```bash
-# Start the application
-./drun.sh up
+Feel free to use **AI pair‑programming tools (ChatGPT, Copilot, etc.)**. During review we will look for:
 
-# Or build and run
-./drun.sh build
-./drun.sh up
-```
+* Evidence you understand and can explain any generated code.
+* Cleanup of irrelevant or low‑quality suggestions.
+* Thoughtful commit messages—avoid one huge “AI dump” commit.
 
-### Manual Setup
+Using AI is permitted and encouraged, but your judgment and editing will be visible in the git history.
 
-```bash
-# Install dependencies
-bundle install
+---
 
-# Setup database
-rails db:setup
+## Repository / Setup & Tooling
 
-# Start server
-rails server
-```
+1. **Fork** this repository to your GitHub account.
+2. **Clone** your fork locally.
+3. **Run** the project for the first time.
+    - _The project contains a minimal Rails app with containerisation support. But feel free to use your preferred setup._
+4. **Start** coding!
 
-## Welcome Page
 
-Visit the root path (`/`) to see the welcome page with:
-- Complete database schema setup commands
-- Expected JSON API response format
-- Ballot data structure examples
-- Project overview and mission statement
+---
 
-## Database Schema
+## Core Requirements (\~2 h)
 
-The application includes the following models:
+| # | Deliverable | Why We Care |
+| - | ----------- | ----------- |
+| 1 | **`GET /results/:election_id`** JSON returning winners, total votes, and basic percentages for each question (simple plurality). | Demonstrates domain understanding & Ruby skills |
+| 2 | Plain‑text or minimal HTML **public page** that consumes the same JSON. | Shows quick UI wiring |
+| 3 | Unit spec(s) for the result calculator. | We value tested code |
+| 4 | Short README (< 1 page) explaining architecture & trade‑offs. | Clear communication |
 
-- **Election**: Core election with title, status, and timing
-- **Question**: Individual questions/races within an election
-- **Answer**: Possible choices for each question
-- **Voter**: Registered voters with access tokens
-- **Ballot**: Individual ballot submissions with tally data
+Focus on correctness and clarity; scope creep is the enemy.
 
-## Docker Runner
+---
 
-This project uses [drun.sh](https://github.com/Rynaro/drun) for streamlined Docker-based development. Common commands:
+## Extra Layers (choose any, total ≤ 2 h)
 
-```bash
-./drun.sh help          # Show all available commands
-./drun.sh up            # Start containers
-./drun.sh down          # Stop containers
-./drun.sh shell         # Open Rails console
-./drun.sh clean         # Clean up containers and volumes
-```
+Pick what interests you—each layer is independent and progressively deeper.
 
-## License
+**A. Strategy Pattern** — Extract vote‑counting into a pluggable `TallyStrategy` interface and add *Ranked‑Choice / IRV* as a second strategy.
 
-This project is part of the ElectionBuddy coding challenge.
+**B. Results Center HTML** — Build a responsive view with percentages + a bar chart (Stimulus or plain JS).
+
+**C. Live Updates** — Push partial results via ActionCable/WebSockets as ballots arrive.
+
+**D. Audit Log** — Expose a timeline of result‑affecting events (ballot cast, question added).
+
+**E. Performance** — Stress‑test with 100 k ballots (faker script) and optimise calculations.
+
+Unfinished layers never penalise you—only completed work is evaluated.
+
+---
+
+## Submission
+
+* Push your solution to a **public GitHub repo** (do **NOT** open a PR against ElectionBuddy).
+* Include setup notes (`rails db:setup && rails s`, or `docker compose up`).
+* Email the link to your recruiter contact.
+
+---
+
+## What We Evaluate
+
+| Area        | Signals We Look For                                             |
+| ----------- | --------------------------------------------------------------- |
+| Correctness | Endpoint returns accurate winners (we run specs)                |
+| Design      | Clear objects, single responsibility, SOLID mindset             |
+| Tests       | Appropriate coverage and meaningful names                       |
+| Git History | Small, descriptive commits                                      |
+| Docs        | Easy to run and understand your decisions                       |
+| Extras      | If you tackled layers beyond Core, is the implementation clean? |
+
+---
+
+## FAQ
+
+* **“I only had 3 h and didn’t finish extras.”** No problem—focus on delivering Core well.
+* **“Can I use AI tools like ChatGPT or Copilot?”** Yes! Review and refine AI output so it meets your standards (see *Using AI Assistance* above).
+* **“Should I containerise with Docker?”** Encouraged. A one‑command `docker compose up` setup streamlines review.
+* **“Do I need fancy UI?”** Functional beats pretty, but enhance if you like.
+* **“What if something seems ambiguous?”** Note your assumption in the README and continue.
+
+Good luck & have fun!
+
+—
+ElectionBuddy Engineering Team
+
