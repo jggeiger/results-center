@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  voter: one
+  tally_payload: 
+
+two:
+  voter: two
+  tally_payload: 
