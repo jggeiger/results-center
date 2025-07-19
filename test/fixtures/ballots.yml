@@ -1,9 +1,50 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  voter: one
-  tally_payload: 
+ballot1:
+  voter: voter1
+  tally_payload: {
+    "choices": {
+      "q_101": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  }
 
-two:
-  voter: two
-  tally_payload: 
+ballot2:
+  voter: voter2
+  tally_payload: {
+    "choices": {
+      "q_101": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  }
+
+ballot3:
+  voter: voter3
+  tally_payload: {
+    "choices": {
+      "q_101": 1,
+      "q_102": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot4:
+  voter: voter4
+  tally_payload: {
+    "choices": {
+      "q_101": 1,
+      "q_102": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot5:
+  voter: voter5
+  tally_payload: {
+    "choices": {
+      "q_101": 1,
+      "q_102": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+

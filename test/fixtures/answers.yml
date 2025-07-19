@@ -1,11 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  question: one
-  text: MyString
+john:
+  question: first_chair
+  text: John
   position: 1
 
-two:
-  question: two
-  text: MyString
+jim:
+  question: first_chair
+  text: Jim
+  position: 2
+
+jen:
+  question: first_chair
+  text: Jen
+  position: 3
+
+henry:
+  question: first_board
+  text: Henry
   position: 1
+
+harold:
+  question: first_board
+  text: Harold
+  position: 2
+
+carol:
+  question: second_board
+  text: Carol
+  position: 1
+
+sidney:
+  question: second_board
+  text: Sidney
+  position: 2

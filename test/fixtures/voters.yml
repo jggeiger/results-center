@@ -1,15 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  election: one
-  email: MyString
-  name: MyString
-  access_token: MyString
-  ballot_cast_at: 2025-07-19 22:07:17
+voter1:
+  election: chair
+  email: test@test.ca
+  name: voter1
+  access_token: 1
+  ballot_cast_at: 2025-07-19 22:07:01
 
-two:
-  election: two
-  email: MyString
-  name: MyString
-  access_token: MyString
-  ballot_cast_at: 2025-07-19 22:07:17
+voter2:
+  election: chair
+  email: test@test.ca
+  name: voter2
+  access_token: 2
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter3:
+  election: board
+  email: test@test.ca
+  name: voter3
+  access_token: 3
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter4:
+  election: board
+  email: test@test.ca
+  name: voter4
+  access_token: 4
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter5:
+  election: board
+  email: test@test.ca
+  name: voter5
+  access_token: 5
+  ballot_cast_at: 2025-07-19 22:07:01
