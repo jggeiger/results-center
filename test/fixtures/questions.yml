@@ -8,12 +8,38 @@ first_chair:
 
 first_board:
   election: board
-  prompt: Who should be a board memeber?
+  prompt: Who should be a board member?
   question_type: single_choice
   position: 1
 
 second_board:
   election: board
-  prompt: Who should be a board memeber?
+  prompt: Who should be a board member?
   question_type: single_choice
   position: 2
+
+empty_ballots:
+  election: board_edge
+  prompt: Who should be a board member?
+  question_type: single_choice
+  position: 1
+
+tie:
+  election: board_edge
+  prompt: Who should be a board member?
+  question_type: single_choice
+  position: 2
+
+invalid_answer:
+  election: board_edge
+  prompt: Who should be a board member?
+  question_type: single_choice
+  position: 3
+
+no_ballots:
+  election: no_ballots
+  prompt: Who should be a board member?
+  question_type: single_choice
+  position: 1
+
+

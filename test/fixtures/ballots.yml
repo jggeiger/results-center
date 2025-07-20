@@ -4,7 +4,7 @@ ballot1:
   voter: voter1
   tally_payload: {
     "choices": {
-      "q_101": 1,
+      "1": 1,
     },
     "submitted_at": "2025-07-19 22:07:01"
   }
@@ -13,7 +13,7 @@ ballot2:
   voter: voter2
   tally_payload: {
     "choices": {
-      "q_101": 1,
+      "1": 1,
     },
     "submitted_at": "2025-07-19 22:07:01"
   }
@@ -22,8 +22,8 @@ ballot3:
   voter: voter3
   tally_payload: {
     "choices": {
-      "q_101": 1,
-      "q_102": 1,
+      "1": 0,
+      "2": 1,
     },
     "submitted_at": "2025-07-19 22:07:01"
   } 
@@ -32,8 +32,8 @@ ballot4:
   voter: voter4
   tally_payload: {
     "choices": {
-      "q_101": 1,
-      "q_102": 1,
+      "1": 1,
+      "2": 1,
     },
     "submitted_at": "2025-07-19 22:07:01"
   } 
@@ -42,9 +42,74 @@ ballot5:
   voter: voter5
   tally_payload: {
     "choices": {
-      "q_101": 1,
-      "q_102": 1,
+      "1": 1,
+      "2": 0,
     },
     "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+
+ballot6:
+  voter: voter6
+  tally_payload: {
+    "choices": {
+      "1": ,
+      "2": 1,
+      "3": 0,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot7:
+  voter: voter7
+  tally_payload: {
+    "choices": {
+      "1": ,
+      "2": 1,
+      "3": 0,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot8:
+  voter: voter8
+  tally_payload: {
+    "choices": {
+      "1": 1,
+      "2": 0,
+      "3": 1,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot9:
+  voter: voter9
+  tally_payload: {
+    "choices": {
+      "1": 1,
+      "2": 0,
+      "3": 100,
+    },
+    "submitted_at": "2025-07-19 22:07:01"
+  } 
+
+ballot10:
+  voter: voter10
+  tally_payload: {
+    "choices": {
+      "1": ,
+      "2": ,
+    },
+    "submitted_at": ,
+  } 
+
+ballot11:
+  voter: voter11
+  tally_payload: {
+    "choices": {
+      "1": ,
+      "2": ,
+    },
+    "submitted_at": ,
   } 
 
