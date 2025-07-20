@@ -1,2 +1,33 @@
 class Election < ApplicationRecord
+
+
+    def self.get_results(election_id)
+
+        questions = Question.in_election(election_id)
+
+        election_result = {
+            "election_id" => election_id,
+            "questions" => []
+        }
+
+        questions.each {|q|
+
+            winner_ids, totals, percentages = Question.get_results(q.id)
+            
+            question_result = {
+                "id" => q.id,
+                "prompt" => q.prompt,
+                "totals" => totals,
+                "percentages" => percentages,
+                "winner_ids" => winner_ids
+            }
+
+            election_result["questions"].append(question_result)
+
+        }   
+
+        return JSON[election_result]
+
+    end
+
 end
