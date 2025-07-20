@@ -1,36 +1,76 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-john:
+answer1:
   question: first_chair
-  text: John
+  text: answer1
   position: 1
 
-jim:
+answer2:
   question: first_chair
-  text: Jim
+  text: answer2
   position: 2
 
-jen:
+answer3:
   question: first_chair
-  text: Jen
+  text: answer3
   position: 3
 
-henry:
+answer4:
   question: first_board
-  text: Henry
+  text: answer4
   position: 1
 
-harold:
+answer5:
   question: first_board
-  text: Harold
+  text: answer5
   position: 2
 
-carol:
+answer6:
   question: second_board
-  text: Carol
+  text: answer6
   position: 1
 
-sidney:
+answer7:
   question: second_board
-  text: Sidney
+  text: answer7
+  position: 2
+
+answer8:
+  question: empty_ballots
+  text: answer8
+  position: 1
+
+answer9:
+  question: empty_ballots
+  text: answer9
+  position: 2
+
+answer10:
+  question: no_ballots
+  text: answer10
+  position: 1
+
+answer11:
+  question: no_ballots
+  text: answer11
+  position: 2
+
+answer12:
+  question: tie
+  text: answer12
+  position: 1
+
+answer13:
+  question: tie
+  text: answer13
+  position: 2
+
+answer14:
+  question: invalid_answer
+  text: answer14
+  position: 1
+
+answer15:
+  question: invalid_answer
+  text: answer15
   position: 2
