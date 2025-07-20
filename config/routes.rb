@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   # Welcome page for ElectionBuddy coding challenge
   get "welcome" => "welcome#index"
+  get "results/:election_id" => "results#show"
 end
