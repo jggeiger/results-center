@@ -12,10 +12,9 @@ class Question < ApplicationRecord
 
     question = Question.find(question_id)
     election_id = question.election_id
-
     ballots = Ballot.in_election(election_id)
-
     answers = Answer.to_question(question_id)
+
     valid_answers = []
     totals = Hash.new
     answers.each{ |a|
@@ -32,21 +31,22 @@ class Question < ApplicationRecord
     }
 
     total_votes = totals.values.sum
-    greatest_votes = totals.values.max()
-    winner_ids = []
     percentages = Hash.new
     if total_votes > 0
         totals.each { |ans, votes|
             percentages[ans] = (votes.to_f/total_votes).truncate(2)
-
-            if votes == greatest_votes
-                winner_ids << ans
-            end
-
         }
     else
         return [[], {}, {}]
     end
+
+    greatest_votes = totals.values.max()
+    winner_ids = []
+    totals.each { |ans, votes|
+        if votes == greatest_votes
+            winner_ids << ans
+        end
+    }
 
     return [winner_ids.sort, totals, percentages]
 
