@@ -4,7 +4,7 @@ ballot1:
   voter: voter1
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer1) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:first_chair) %>: <%= ActiveRecord::FixtureSet.identify(:answer1) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   }
@@ -13,7 +13,7 @@ ballot2:
   voter: voter2
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer1) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:first_chair) %>: <%= ActiveRecord::FixtureSet.identify(:answer1) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   }
@@ -22,8 +22,8 @@ ballot3:
   voter: voter3
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer4) %>,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer7) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:first_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer4) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:second_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer7) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -32,8 +32,8 @@ ballot4:
   voter: voter4
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer5) %>,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer7) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:first_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer5) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:second_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer7) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -42,8 +42,8 @@ ballot5:
   voter: voter5
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer5) %>,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer6) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:first_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer5) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:second_board) %>: <%= ActiveRecord::FixtureSet.identify(:answer6) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -53,9 +53,9 @@ ballot6:
   voter: voter6
   tally_payload: {
     choices: {
-      "1": ,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer12) %>,
-      "3": <%= ActiveRecord::FixtureSet.identify(:answer15) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:empty_ballots) %> : ,
+      q_<%= ActiveRecord::FixtureSet.identify(:tie) %>           : <%= ActiveRecord::FixtureSet.identify(:answer12) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: <%= ActiveRecord::FixtureSet.identify(:answer15) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -64,9 +64,9 @@ ballot7:
   voter: voter7
   tally_payload: {
     choices: {
-      "1": ,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer12) %>,
-      "3": <%= ActiveRecord::FixtureSet.identify(:answer14) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:empty_ballots) %> : ,
+      q_<%= ActiveRecord::FixtureSet.identify(:tie) %>           : <%= ActiveRecord::FixtureSet.identify(:answer12) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: <%= ActiveRecord::FixtureSet.identify(:answer14) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -75,9 +75,9 @@ ballot8:
   voter: voter8
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer8) %>,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer13) %>,
-      "3": <%= ActiveRecord::FixtureSet.identify(:answer14) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:empty_ballots) %> : <%= ActiveRecord::FixtureSet.identify(:answer8) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:tie) %>           : <%= ActiveRecord::FixtureSet.identify(:answer13) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: <%= ActiveRecord::FixtureSet.identify(:answer14) %>,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -86,9 +86,9 @@ ballot9:
   voter: voter9
   tally_payload: {
     choices: {
-      "1": <%= ActiveRecord::FixtureSet.identify(:answer8) %>,
-      "2": <%= ActiveRecord::FixtureSet.identify(:answer13) %>,
-      "3": 100,
+      q_<%= ActiveRecord::FixtureSet.identify(:empty_ballots) %> : <%= ActiveRecord::FixtureSet.identify(:answer8) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:tie) %>           : <%= ActiveRecord::FixtureSet.identify(:answer13) %>,
+      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: 100,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -97,13 +97,13 @@ ballot10:
   voter: voter10
   tally_payload:
     choices:
-      "1": 
+      q_<%= ActiveRecord::FixtureSet.identify(:no_ballots) %>: 
     submitted_at:
 
 ballot11:
   voter: voter11
   tally_payload:
     choices:
-      "1": 
+      q_<%= ActiveRecord::FixtureSet.identify(:no_ballots) %>: 
     submitted_at:
 
