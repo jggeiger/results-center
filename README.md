@@ -1,8 +1,8 @@
 # “Results Center Project”
 
 # Setup
-`docker compose up` to run project
-`docker exec -it drun_rails sh` to access container shell if needed
+* `docker compose up` to run project
+* `docker exec -it drun_rails sh` to access container shell if needed
 
 # Core Functionality
 
