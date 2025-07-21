@@ -1,0 +1,76 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+answer1:
+  question: first_chair
+  text: answer1
+  position: 1
+
+answer2:
+  question: first_chair
+  text: answer2
+  position: 2
+
+answer3:
+  question: first_chair
+  text: answer3
+  position: 3
+
+answer4:
+  question: first_board
+  text: answer4
+  position: 1
+
+answer5:
+  question: first_board
+  text: answer5
+  position: 2
+
+answer6:
+  question: second_board
+  text: answer6
+  position: 1
+
+answer7:
+  question: second_board
+  text: answer7
+  position: 2
+
+answer8:
+  question: empty_ballots
+  text: answer8
+  position: 1
+
+answer9:
+  question: empty_ballots
+  text: answer9
+  position: 2
+
+answer10:
+  question: no_ballots
+  text: answer10
+  position: 1
+
+answer11:
+  question: no_ballots
+  text: answer11
+  position: 2
+
+answer12:
+  question: tie
+  text: answer12
+  position: 1
+
+answer13:
+  question: tie
+  text: answer13
+  position: 2
+
+answer14:
+  question: invalid_answer
+  text: answer14
+  position: 1
+
+answer15:
+  question: invalid_answer
+  text: answer15
+  position: 2

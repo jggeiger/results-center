@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+chair:
+  title: Chair Election
+  status: open
+  starts_at: 2025-07-19 22:07:01
+  ends_at: 2025-07-19 22:07:01
+
+board:
+  title: Board Members
+  status: open
+  starts_at: 2025-07-19 22:07:01
+  ends_at: 2025-07-19 22:07:01
+
+board_edge:
+  title: Edge Cases
+  status: open
+  starts_at: 2025-07-19 22:07:01
+  ends_at: 2025-07-19 22:07:01
+
+no_ballots:
+  title: No Ballots
+  status: open
+  starts_at: 2025-07-19 22:07:01
+  ends_at: 2025-07-19 22:07:01

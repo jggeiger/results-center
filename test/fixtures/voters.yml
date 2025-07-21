@@ -1,0 +1,78 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+voter1:
+  election: chair
+  email: test@test.ca
+  name: voter1
+  access_token: 1
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter2:
+  election: chair
+  email: test@test.ca
+  name: voter2
+  access_token: 2
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter3:
+  election: board
+  email: test@test.ca
+  name: voter3
+  access_token: 3
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter4:
+  election: board
+  email: test@test.ca
+  name: voter4
+  access_token: 4
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter5:
+  election: board
+  email: test@test.ca
+  name: voter5
+  access_token: 5
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter6:
+  election: board_edge
+  email: test@test.ca
+  name: voter6
+  access_token: 6
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter7:
+  election: board_edge
+  email: test@test.ca
+  name: voter7
+  access_token: 7
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter8:
+  election: board_edge
+  email: test@test.ca
+  name: voter8
+  access_token: 8
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter9:
+  election: board_edge
+  email: test@test.ca
+  name: voter9
+  access_token: 9
+  ballot_cast_at: 2025-07-19 22:07:01
+
+voter10:
+  election: no_ballots
+  email: test@test.ca
+  name: voter10
+  access_token: 10
+  ballot_cast_at: nil
+
+voter11:
+  election: no_ballots
+  email: test@test.ca
+  name: voter11
+  access_token: 11
+  ballot_cast_at: nil
