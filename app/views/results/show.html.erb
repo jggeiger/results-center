@@ -2,7 +2,13 @@
 <html>
 
     <body>
-        <h1><%= @election_id %></h1>
+        <h1 id="election_title"><%= @election_title %></h1>
+        <h1 id="election start"><%= @election_start %></h1>
+        <h1 id="election end"><%= @election_end %></h1>
     <body>
+
+    <div>
+        <%= sanitize @questions %>
+    </div>
 
 </html>
