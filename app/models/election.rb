@@ -6,6 +6,12 @@ class Election < ApplicationRecord
 
     def self.get_results(election_id)
 
+        begin
+            election = Election.find(election_id)
+        rescue ActiveRecord::RecordNotFound => e
+            return JSON[{}]
+        end
+
         questions = Question.in_election(election_id)
 
         election_result = {

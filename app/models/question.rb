@@ -23,7 +23,7 @@ class Question < ApplicationRecord
       totals[a.id.to_s] = 0
     }
 
-    # Assumes ballot payload is ordered by question position
+    # Assumes ballot payload is ordered by question position i.e. choices = {q_pos : ans_id, ...}
     q_id = question.position.to_s
 
     ballots.each { |b|
