@@ -23,6 +23,11 @@ class Election < ApplicationRecord
 
             winner_ids, totals, percentages = Question.get_results(q.id)
             
+            #Winner chosen based on lowest id/earliest created
+            if !winner_ids.empty?
+                winner_ids = winner_ids.first(1)
+            end
+
             question_result = {
                 "id" => q.id,
                 "prompt" => q.prompt,
