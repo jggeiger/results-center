@@ -116,8 +116,8 @@ ranked_choice_b1:
         [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>],
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
-        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
-        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        [foo,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
         [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
@@ -177,8 +177,8 @@ ranked_choice_b4:
         <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>],
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
-        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
-        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        [foo,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
         [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
@@ -274,7 +274,7 @@ ranked_choice_b9:
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
         [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>],
-      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: foo,
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: [foo, foo],
       q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
         [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>,
         <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,

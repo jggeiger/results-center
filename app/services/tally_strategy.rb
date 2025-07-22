@@ -3,7 +3,8 @@ module TallyStrategy
     class VoteCounter
 
         QUESTION_TYPES = [
-            SINGLE_CHOICE = "single_choice"
+            SINGLE_CHOICE = "single_choice",
+            RANKED_CHOICE = "ranked_choice"
         ]
 
         def initialize(question_id)
@@ -22,19 +23,21 @@ module TallyStrategy
             case question.question_type
             when SINGLE_CHOICE
                 single_choice(ballots)
+            when RANKED_CHOICE
+                ranked_choice(ballots)
             end
 
-            total_votes = @totals.values.sum
+            total_votes = @totals.values.sum { |val| val.to_i }
             percentages = Hash.new
             if total_votes > 0
                 @totals.each { |ans, votes|
-                    percentages[ans] = (votes.to_f/total_votes).truncate(2)
+                    votes.nil? ? percentages[ans] = nil : percentages[ans] = (votes.to_f/total_votes).truncate(2)
                 }
             else
                 return [[], {}, {}]
             end
 
-            greatest_votes = @totals.values.max()
+            greatest_votes = @totals.values.compact.max()
             winner_ids = []
             @totals.each { |ans, votes|
                 if votes == greatest_votes
@@ -74,15 +77,63 @@ module TallyStrategy
                 answer_id = choices[q_id].to_s
                 next if @totals[answer_id].nil? #Invalid answers treated as blank ballot
 
-                @totals[answer_id] = @totals[answer_id] + 1
+                @totals[answer_id] += 1
 
             }
 
         end
 
         def ranked_choice(ballots)
-        end
 
+            # Assumes ballot payload is ordered by question id
+            # Assumes ans_ids are sorted by rank
+            # i.e. choices = {q_{question_position} : [first choice ans_id, second choice ans_id, ...], ...}
+            q_id = "q_" + @question_id.to_s
+
+            #Count first votes
+            ballot_entries = []
+            ballots.each { |b|
+
+                choices = b.tally_payload["choices"]
+                next if choices[q_id].nil?
+
+                choices[q_id].each{|answer|     #Remove any invalid answers from ballot
+                    next unless @totals[answer.to_s].nil?
+                    choices[q_id].delete(answer)
+                }
+
+                next if choices[q_id].empty?
+
+                ballot_entries.append(choices[q_id])
+                answer_id = choices[q_id][0].to_s
+                @totals[answer_id] += 1
+            }
+
+            #Repeat until one answer has >=50% of the vote
+            until @totals.values.compact.max >= (ballot_entries.length.to_f/2).ceil do
+
+                elim_answer_id = nil
+                lowest_votes = @totals.values.compact.min
+                @totals.keys.sort.reverse_each{ |key|   #Tie breaks determined by lowest_id wins, so find highest id loser first
+                    if @totals[key] == lowest_votes
+                        elim_answer_id = key
+                        @totals[key] = nil
+                        break
+                    end
+                }
+
+                ballot_entries.each {|answers|
+                    next unless answers[0].to_s == elim_answer_id
+                    answers.shift()
+                    next if answers.empty?
+                    @totals[answers[0].to_s] += 1
+                }
+
+                
+                ballot_entries.delete([])
+
+            end
+        end
     end
 
     class ElectionResultsGetter

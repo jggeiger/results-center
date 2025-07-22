@@ -127,8 +127,8 @@ class VoteCounterTest < ActiveSupport::TestCase
         ans3 => nil
       },
       {
-        ans1 => 0.60,
-        ans2 => 0.30,
+        ans1 => 0.66,
+        ans2 => 0.33,
         ans3 => nil
       }
     ]
