@@ -74,3 +74,65 @@ answer15:
   question: invalid_answer
   text: answer15
   position: 2
+
+
+
+ranked_q1_a1:
+  question: ranked_choice1_a1
+  text: ranked_q1_a1
+  position: 1
+
+ranked_q1_a2:
+  question: ranked_choice1_a1
+  text: ranked_q1_a2
+  position: 2
+
+ranked_q1_a3:
+  question: ranked_choice1_a1
+  text: ranked_q1_a3
+  position: 3
+
+ranked_q2_a1:
+  question: ranked_choice2_a1a2
+  text: ranked_q2_a1
+  position: 1
+
+ranked_q2_a2:
+  question: ranked_choice2_a1a2
+  text: ranked_q2_a2
+  position: 2
+
+ranked_q2_a3:
+  question: ranked_choice2_a1a2
+  text: ranked_q2_a3
+  position: 3
+
+ranked_q3_a1:
+  question: ranked_choice3_a1a2a3
+  text: ranked_q3_a1
+  position: 1
+
+ranked_q3_a2:
+  question: ranked_choice3_a1a2a3
+  text: ranked_q3_a2
+  position: 2
+
+ranked_q3_a3:
+  question: ranked_choice3_a1a2a3
+  text: ranked_q3_a3
+  position: 3
+
+ranked_q4_a1:
+  question: ranked_choice4_none
+  text: ranked_q4_a1
+  position: 1
+
+ranked_q4_a2:
+  question: ranked_choice4_none
+  text: ranked_q4_a2
+  position: 2
+
+ranked_q4_a3:
+  question: ranked_choice4_none
+  text: ranked_q4_a3
+  position: 3

@@ -108,4 +108,111 @@ class VoteCounterTest < ActiveSupport::TestCase
     assert_equal(expected, result, "question result does not contain correct information when a ballot contains an invalid answer")
 
   end
+
+  test "vote count result with ranked choice" do
+    #a1 win
+    #first round: a1:4, a2:3, a3:2
+    #second round: a1:6, a2:3
+    question = questions(:ranked_choice1_a1)
+
+    ans1 = answers(:ranked_q1_a1).id.to_s
+    ans2 = answers(:ranked_q1_a2).id.to_s
+    ans3 = answers(:ranked_q1_a3).id.to_s
+
+    expected = [
+      [ans1],
+      {
+        ans1 => 6,
+        ans2 => 3,
+        ans3 => nil
+      },
+      {
+        ans1 => 0.60,
+        ans2 => 0.30,
+        ans3 => nil
+      }
+    ]
+
+    result = TallyStrategy::VoteCounter.new(question.id).call
+
+    assert_equal(expected, result, "ranked_choice question result does not contain correct information")
+
+
+  end
+
+  test "vote count result with ranked choice, tie" do
+    #a1a2 tie
+    #first round: a1:3, a2:3, a3:2
+    #second round: a1:4, a2:4
+    question = questions(:ranked_choice2_a1a2)
+
+    ans1 = answers(:ranked_q2_a1).id.to_s
+    ans2 = answers(:ranked_q2_a2).id.to_s
+    ans3 = answers(:ranked_q2_a3).id.to_s
+
+    expected = [
+      [ans1, ans2].sort,
+      {
+        ans1 => 4,
+        ans2 => 4,
+        ans3 => nil
+      },
+      {
+        ans1 => 0.50,
+        ans2 => 0.50,
+        ans3 => nil
+      }
+    ]
+
+    result = TallyStrategy::VoteCounter.new(question.id).call
+
+    assert_equal(expected, result, "ranked_choice question result does not contain correct information when final stage tie occurs")
+
+
+  end
+
+  test "vote count result with ranked choice, tie before final stage" do
+    #a2a3 tie then a1 win
+    #first round: a1:4, a2:3, a3:3
+    #second round: a1:6, a2:4
+    question = questions(:ranked_choice3_a1a2a3)
+
+    ans1 = answers(:ranked_q3_a1).id.to_s
+    ans2 = answers(:ranked_q3_a2).id.to_s
+    ans3 = answers(:ranked_q3_a3).id.to_s
+
+    expected = [
+      [ans1],
+      {
+        ans1 => 6,
+        ans2 => 4,
+        ans3 => nil
+      },
+      {
+        ans1 => 0.60,
+        ans2 => 0.40,
+        ans3 => nil
+      }
+    ]
+
+    result = TallyStrategy::VoteCounter.new(question.id).call
+
+    assert_equal(expected, result, "ranked_choice question result does not contain correct information when early stage tie occurs")
+
+  end
+
+  test "vote count result with ranked choice, no ballots" do
+    #no ballots
+    #first round: terminates
+    question = questions(:ranked_choice4_none)
+
+    expected = [[], {}, {}]
+
+    result = TallyStrategy::VoteCounter.new(question.id).call
+
+    assert_equal(expected, result, "ranked_choice question result does not contain correct information when no ballots cast")
+
+  end
+
+
 end

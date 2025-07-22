@@ -23,3 +23,9 @@ no_ballots:
   status: open
   starts_at: 2025-07-19 22:07:01
   ends_at: 2025-07-19 22:07:01
+
+ranked_choice_election:
+  title: Ranked choice
+  status: open
+  starts_at: 2025-07-19 22:07:01
+  ends_at: 2025-07-19 22:07:01

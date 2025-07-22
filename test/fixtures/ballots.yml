@@ -88,7 +88,7 @@ ballot9:
     choices: {
       q_<%= ActiveRecord::FixtureSet.identify(:empty_ballots) %> : <%= ActiveRecord::FixtureSet.identify(:answer8) %>,
       q_<%= ActiveRecord::FixtureSet.identify(:tie) %>           : <%= ActiveRecord::FixtureSet.identify(:answer13) %>,
-      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: 100,
+      q_<%= ActiveRecord::FixtureSet.identify(:invalid_answer) %>: foo,
     },
     submitted_at: "2025-07-19 22:07:01"
   } 
@@ -107,3 +107,197 @@ ballot11:
       q_<%= ActiveRecord::FixtureSet.identify(:no_ballots) %>: 
     submitted_at:
 
+
+ranked_choice_b1:
+  voter: ranked_choice_v1
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  } 
+
+ranked_choice_b2:
+  voter: ranked_choice_v2
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b3:
+  voter: ranked_choice_v3
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b4:
+  voter: ranked_choice_v4
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b5:
+  voter: ranked_choice_v5
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b6:
+  voter: ranked_choice_v6
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b7:
+  voter: ranked_choice_v7
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b8:
+  voter: ranked_choice_v8
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: ,
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q2_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q2_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b9:
+  voter: ranked_choice_v9
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: foo,
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }
+
+ranked_choice_b10:
+  voter: ranked_choice_v10
+  tally_payload: {
+    choices: {
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice1_a1) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q1_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a1) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q1_a2) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice2_a1a2) %>: ,
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice3_a1a2a3) %>: 
+        [<%= ActiveRecord::FixtureSet.identify(:ranked_q3_a3) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a2) %>,
+        <%= ActiveRecord::FixtureSet.identify(:ranked_q3_a1) %>],
+      q_<%= ActiveRecord::FixtureSet.identify(:ranked_choice4_none) %>: 
+    },
+    submitted_at: "2025-07-19 22:07:01"
+  }

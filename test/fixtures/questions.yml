@@ -42,4 +42,28 @@ no_ballots:
   question_type: single_choice
   position: 1
 
+ranked_choice1_a1: #a1 wins
+  election: ranked_choice_election
+  prompt: ranked_choice1_a1
+  question_type: ranked_choice
+  position: 1
+
+ranked_choice2_a1a2: #a1a2 tie for win
+  election: ranked_choice_election
+  prompt: ranked_choice2_a1a2
+  question_type: ranked_choice
+  position: 2
+
+ranked_choice3_a1a2a3: #a2a3 tie, then a1 wins
+  election: ranked_choice_election
+  prompt: ranked_choice3_a1a2a3
+  question_type: ranked_choice
+  position: 3
+
+ranked_choice4_none: #no votes
+  election: ranked_choice_election
+  prompt: ranked_choice4_none
+  question_type: ranked_choice
+  position: 4
+
 
