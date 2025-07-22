@@ -1,8 +1,8 @@
 module TallyStrategy
 
-    class VoteCounter < ApplicationService
+    class VoteCounter
 
-        def initialize(:question_id)
+        def initialize(question_id)
         end
 
         def call
@@ -18,16 +18,15 @@ module TallyStrategy
 
     end
 
-    class ElectionResultsGetter < ApplicationService
+    class ElectionResultsGetter
 
-        def initialize(:election_id)
+        def initialize(election_id)
         end
 
         def call
         end
 
     end
-
 
 
 end

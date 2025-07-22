@@ -1,6 +1,8 @@
 require "test_helper"
 
 class VoteCounterTest < ActiveSupport::TestCase
+  include TallyStrategy
+
   test "vote count result contains proper information" do
     question = questions(:first_board)
 
@@ -19,7 +21,7 @@ class VoteCounterTest < ActiveSupport::TestCase
       }
     ]
 
-    result = TallyStrategy::VoteCounter.get_results(question.id)
+    result = TallyStrategy::VoteCounter.new(question.id).call
     
     assert_equal(expected, result, "question result does not contain correct information")
 
@@ -43,7 +45,7 @@ class VoteCounterTest < ActiveSupport::TestCase
       }
     ]
 
-    result = TallyStrategy::VoteCounter.get_results(question.id)
+    result = TallyStrategy::VoteCounter.new(question.id).call
 
     assert_equal(expected, result, "question result does not contain correct information when some ballots are empty")
 
@@ -54,7 +56,7 @@ class VoteCounterTest < ActiveSupport::TestCase
     
     expected = [[], {}, {}]
 
-    result = TallyStrategy::VoteCounter.get_results(question.id)
+    result = TallyStrategy::VoteCounter.new(question.id).call
 
     assert_equal(expected, result, "question result does not contain correct information when no ballots cast")
 
@@ -78,7 +80,7 @@ class VoteCounterTest < ActiveSupport::TestCase
       }
     ]
 
-    result = TallyStrategy::VoteCounter.get_results(question.id)
+    result = TallyStrategy::VoteCounter.new(question.id).call
 
     assert_equal(expected, result, "question result does not contain correct information when tie occurs")
 
@@ -102,7 +104,7 @@ class VoteCounterTest < ActiveSupport::TestCase
       }
     ]
 
-    result = TallyStrategy::VoteCounter.get_results(question.id)
+    result = TallyStrategy::VoteCounter.new(question.id).call
 
     assert_equal(expected, result, "question result does not contain correct information when a ballot contains an invalid answer")
 
