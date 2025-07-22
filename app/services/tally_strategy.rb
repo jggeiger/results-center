@@ -88,9 +88,47 @@ module TallyStrategy
     class ElectionResultsGetter
 
         def initialize(election_id)
+            @election_id = election_id
         end
 
         def call
+
+            begin
+                election = Election.find(@election_id)
+            rescue ActiveRecord::RecordNotFound => e
+                return JSON[{}]
+            end
+
+            questions = Question.in_election(@election_id)
+
+            election_result = {
+                "election_id" => @election_id,
+                "questions" => []
+            }
+
+            questions.each {|q|
+
+                winner_ids, totals, percentages = TallyStrategy::VoteCounter.new(q.id).call
+                
+                #Winner chosen based on lowest id/earliest created
+                if !winner_ids.empty?
+                    winner_ids = winner_ids.first(1)
+                end
+
+                question_result = {
+                    "id" => q.id,
+                    "prompt" => q.prompt,
+                    "totals" => totals,
+                    "percentages" => percentages,
+                    "winner_ids" => winner_ids
+                }
+
+                election_result["questions"].append(question_result)
+
+            }   
+
+            return JSON[election_result]
+
         end
 
     end
