@@ -6,6 +6,8 @@ class Question < ApplicationRecord
   validates :question_type, presence: true
   validates :position, presence: true
 
+  enum :question_type, {single_choice: "single_choice", ranked_choice: "ranked_choice"}
+
   scope :in_election, -> (election_id) {where(election: election_id)}
 
 end
