@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ElectionResultsGetterTest < ActiveSupport::TestCase
-  include TallyStrategy
 
   test "election results contain all relevant questions" do
     

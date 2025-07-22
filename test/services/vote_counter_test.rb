@@ -1,7 +1,6 @@
 require "test_helper"
 
 class VoteCounterTest < ActiveSupport::TestCase
-  include TallyStrategy
 
   test "vote count result contains proper information" do
     question = questions(:first_board)

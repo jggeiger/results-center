@@ -1,6 +1,7 @@
 class ResultsController < ApplicationController
+
     def show
-        @results = Election.get_results(params[:election_id])
+        @results = TallyStrategy::ElectionResultsGetter.new(params[:election_id]).call
 
         render json: @results
     end
